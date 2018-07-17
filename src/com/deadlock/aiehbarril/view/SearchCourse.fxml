@@ -11,7 +11,7 @@
    <children>
       <TextField layoutX="15.0" layoutY="224.0" prefHeight="33.0" prefWidth="291.0" promptText="Insira a disciplina..." />
       <Text layoutX="15.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disciplina" />
-      <Hyperlink layoutX="65.0" layoutY="402.0" text="Cadastre ou solicite avaliação" underline="true">
+      <Hyperlink layoutX="65.0" layoutY="402.0" onAction="#handleRegisterCourse" text="Cadastre ou solicite avaliação" underline="true">
          <font>
             <Font size="14.0" />
          </font>

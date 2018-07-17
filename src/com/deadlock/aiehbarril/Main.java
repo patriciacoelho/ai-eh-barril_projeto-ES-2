@@ -7,6 +7,7 @@ import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
@@ -22,7 +23,7 @@ public class Main extends Application {
 
         initRootLayout();
 
-        showPersonOverview();
+        showSearchCourse();
 
 	}
 
@@ -46,17 +47,36 @@ public class Main extends Application {
     }
 
     /**
-     * Mostra o person overview dentro do root layout.
+     * Mostra a view SearchCourse dentro do root layout.
      */
-    public void showPersonOverview() {
+    public void showSearchCourse() {
         try {
             // Carrega o person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/SearchCourse.fxml"));
-            AnchorPane personOverview = (AnchorPane) loader.load();
+            AnchorPane searchCourse = (AnchorPane) loader.load();
 
             // Define o person overview dentro do root layout.
-            rootLayout.setCenter(personOverview);
+            rootLayout.setCenter(searchCourse);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Chamado quando o usuário clica em cadastrar disciplina.
+     * Abre a view RegisterCourse
+     */
+    @FXML
+    private void handleRegisterCourse() {
+    	try {
+            // Carrega o person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/RegisterCourse.fxml"));
+            AnchorPane registerCourse = (AnchorPane) loader.load();
+
+            // Define o person overview dentro do root layout.
+            rootLayout.setCenter(registerCourse);
         } catch (IOException e) {
             e.printStackTrace();
         }
