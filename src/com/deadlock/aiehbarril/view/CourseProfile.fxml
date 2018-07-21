@@ -24,13 +24,13 @@
                </image>
             </ImageView>
          </children></AnchorPane>
-      <Button layoutX="109.0" layoutY="436.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Confirmar" textAlignment="CENTER" textFill="#fcfcfc">
+      <Button layoutX="109.0" layoutY="436.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Avaliar" textAlignment="CENTER" textFill="#fcfcfc">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <AnchorPane layoutX="10.0" layoutY="51.0" prefHeight="148.0" prefWidth="300.0" style="-fx-background-color: #a2a2a2;" />
-      <AnchorPane layoutX="10.0" layoutY="49.0" prefHeight="145.0" prefWidth="297.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="10.0" layoutY="51.0" prefHeight="131.0" prefWidth="300.0" style="-fx-background-color: #a2a2a2;" />
+      <AnchorPane layoutX="10.0" layoutY="49.0" prefHeight="131.0" prefWidth="297.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label layoutX="19.0" layoutY="14.0" text="Cálculo III" textFill="#565656">
                <font>
@@ -38,14 +38,20 @@
                </font>
             </Label>
             <Label layoutX="21.0" layoutY="42.0" text="Edson Araújo" />
-            <Label layoutX="7.0" layoutY="73.0" text="NUM votos" />
-            <Label layoutX="113.0" layoutY="101.0" text="porcentagem" />
+            <Label layoutX="26.0" layoutY="78.0" text="NUM votos" />
+            <ProgressBar layoutX="21.0" layoutY="97.0" prefHeight="27.0" prefWidth="256.0" progress="0.0" />
+            <Label layoutX="114.0" layoutY="102.0" text="porcentagem" />
+            <ImageView fitHeight="89.0" fitWidth="100.0" layoutX="194.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/eh-de-boa.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="211.0" prefHeight="220.0" prefWidth="300.0" style="-fx-background-color: #a2a2a2;" />
-      <AnchorPane layoutX="14.0" layoutY="209.0" prefHeight="217.0" prefWidth="297.0" style="-fx-background-color: #f8f8f8;">
+      <AnchorPane layoutX="14.0" layoutY="191.0" prefHeight="235.0" prefWidth="297.0" style="-fx-background-color: #f8f8f8;">
          <children>
-            <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="20.0" prefWidth="291.0" style="-fx-background-color: #eeeeee;">
+            <AnchorPane layoutX="-2.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #eeeeee;">
                <children>
                   <Label layoutX="6.0" layoutY="6.0" text="+ informações" />
                   <Label layoutX="249.0" layoutY="8.0" />
