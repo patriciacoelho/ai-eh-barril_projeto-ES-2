@@ -17,7 +17,7 @@ public class Rating {
 		this.free_to_answers = 0;
 		this.projects = 0;
 		this.confidence = 0;
-		this.eh_barril = 0;
+		this.eh_barril = false;
 	}
 	
 	public int getExplanation() {
