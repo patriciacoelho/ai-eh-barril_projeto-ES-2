@@ -8,13 +8,42 @@ import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+
+import com.deadlock.aiehbarril.model.Course;
 
 public class Main extends Application {
 
 	private Stage primaryStage;
     private BorderPane rootLayout;
+
+    /** Os dados como uma observable list de Courses.	*/
+    private ObservableList<Course> courseData = FXCollections.observableArrayList();
+
+    /** Construtor  */
+    public Main() {
+        // Add some sample data
+    	courseData.add(new Course("Cálculo III", "Edson"));
+    	courseData.add(new Course("Eng. de Software I", "Ricardo"));
+    	courseData.add(new Course("Banco de Dados I", "Godoy"));
+    	courseData.add(new Course("Redes de computadores I", "Fábio"));
+    	courseData.add(new Course("Física II", "Paulo"));
+    	courseData.add(new Course("Física I", "Wagner"));
+    	courseData.add(new Course("Cálculo Numérico", "Jorge"));
+    	courseData.add(new Course("Cálculo II", "Beto"));
+    	courseData.add(new Course("Estatística", "Hugo"));
+    }
+
+    /**
+     * Retorna os dados como uma observable list de Courses.
+     * @return
+     */
+    public ObservableList<Course> getCourseData() {
+        return courseData;
+    }
 
 	@Override
 	public void start(Stage primaryStage) {
