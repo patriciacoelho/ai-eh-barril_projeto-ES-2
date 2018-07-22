@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 //import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
+import java.util.ArrayList;
+
 import com.deadlock.aiehbarril.model.Course;
 
 public class Main extends Application {
@@ -98,30 +100,41 @@ public class Main extends Application {
 
 	}
 
-    public static void changeScreen(String url) {
+    public static void changeScreen(String url, Object userData) {
     	switch (url){
     	case "view/SearchCourse.fxml":
     		currentStage.setScene(searchCourse);
+    		notifyAllListeners("SearchCourse",userData);
     		break;
     	case "view/About.fxml":
     		currentStage.setScene(about);
+    		notifyAllListeners("About",userData);
     		break;
     	case "view/RegisterCourse.fxml":
     		currentStage.setScene(registerCourse);
+    		notifyAllListeners("RegisterCourse",userData);
     		break;
     	case "view/CourseProfile.fxml":
     		currentStage.setScene(courseProfile);
+    		notifyAllListeners("CourseProfile",userData);
     		break;
     	case "view/Evaluate.fxml":
     		currentStage.setScene(evaluate);
+    		notifyAllListeners("Evaluate",userData);
     		break;
     	case "view/LastStepRating.fxml":
     		currentStage.setScene(lastStepRating);
+    		notifyAllListeners("LastStepRating",userData);
     		break;
     	case "view/RatingFeedback.fxml":
     		currentStage.setScene(ratingFeedback);
+    		notifyAllListeners("RatingFeedback",userData);
     		break;
     	}
+    }
+    
+    public static void changeScreen(String url) {
+    	changeScreen(url,null);
     }
 
     public Stage getCurrentStage() {
@@ -131,5 +144,23 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    
+    //-------------------
+    
+    private static ArrayList<OnChangeScreen> listeners = new ArrayList<>();
+    
+    public static interface OnChangeScreen{
+    	void onScreenChanged(String newScreen, Object userData);
+    }
+    
+    public static void addOnChangeScreenListener(OnChangeScreen newListener) {
+    	listeners.add(newListener);
+    }
+    
+    private static void notifyAllListeners(String newScreen, Object userData) {
+    	for(OnChangeScreen l : listeners) {
+    		l.onScreenChanged(newScreen, userData);
+    	}
+    }
+    
 }
