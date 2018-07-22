@@ -10,10 +10,7 @@ import javafx.scene.Scene;
 //import javafx.fxml.FXML;
 //import javafx.scene.layout.AnchorPane;
 //import javafx.scene.layout.BorderPane;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-
 
 import com.deadlock.aiehbarril.model.Course;
 
@@ -32,32 +29,47 @@ public class Main extends Application {
 //    private BorderPane rootLayout;
 
     /** Os dados como uma observable list de Courses.	*/
-    private ObservableList<Course> courseData = FXCollections.observableArrayList();
+//    private ObservableList<Course> courseData = FXCollections.observableArrayList();
 
     /** Construtor  */
     public Main() {
         // Add some sample data
-    	courseData.add(new Course("Cálculo III", "Edson"));
-    	courseData.add(new Course("Eng. de Software I", "Ricardo"));
-    	courseData.add(new Course("Banco de Dados I", "Godoy"));
-    	courseData.add(new Course("Redes de computadores I", "Fábio"));
-    	courseData.add(new Course("Física II", "Paulo"));
-    	courseData.add(new Course("Física I", "Wagner"));
-    	courseData.add(new Course("Cálculo Numérico", "Jorge"));
-    	courseData.add(new Course("Cálculo II", "Beto"));
-    	courseData.add(new Course("Estatística", "Hugo"));
+    	int i = 0;
+
+    	Course A = new Course(++i,"Cálculo III", "Edson");
+    	A.save();
+    	A = new Course(++i,"Eng. de Software I", "Ricardo");
+    	A.save();
+    	A = new Course(++i,"Banco de Dados I", "Godoy");
+    	A.save();
+    	A = new Course(++i,"Redes de computadores I", "Fábio");
+    	A.save();
+    	A = new Course(++i,"Física II", "Paulo");
+    	A.save();
+    	A = new Course(++i,"Física I", "Wagner");
+    	A.save();
+    	A = new Course(++i,"Cálculo Numérico", "Jorge");
+    	A.save();
+    	A = new Course(++i,"Cálculo II", "Beto");
+    	A.save();
+    	A = new Course(++i,"Estatística", "Hugo");
+    	A.save();
+
     }
 
     /**
      * Retorna os dados como uma observable list de Courses.
      * @return
      */
-    public ObservableList<Course> getCourseData() {
-        return courseData;
-    }
+//    public ObservableList<Course> getCourseData() {
+//        return courseData;
+//    }
 
     @Override
 	public void start(Stage primaryStage) throws Exception {
+
+//    	System.exit(0);
+
     	currentStage = primaryStage;
 
     	Parent fxmlSearchCourse = FXMLLoader.load(getClass().getResource("view/SearchCourse.fxml"));

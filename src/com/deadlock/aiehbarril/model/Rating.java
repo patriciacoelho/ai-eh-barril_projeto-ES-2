@@ -1,25 +1,63 @@
 package com.deadlock.aiehbarril.model;
 
+import java.util.List;
+
+import com.deadlock.aiehbarril.model.sqlite.RatingSQLite;
+
 public class Rating {
+	private int _id;
+
 	private int explanation;
 	private int requires_presence;
 	private int exam_dificulty;
 	private int free_to_answers;
 	private int projects;
 	private int confidence;
-	private boolean eh_barril;
-	
+	private short eh_barril;
+
+	private int fk_courseID;
+
 
 	public Rating() {
+		this._id = 0;
 		this.explanation = 0;
 		this.requires_presence = 0;
 		this.exam_dificulty = 0;
 		this.free_to_answers = 0;
 		this.projects = 0;
 		this.confidence = 0;
-		this.eh_barril = false;
+		this.eh_barril = 0;
 	}
-	
+
+
+
+	public Rating(int explanation, int requires_presence, int exam_dificulty, int free_to_answers, int projects,
+			int confidence, short eh_barril, int fk_courseID) {
+		this.explanation = explanation;
+		this.requires_presence = requires_presence;
+		this.exam_dificulty = exam_dificulty;
+		this.free_to_answers = free_to_answers;
+		this.projects = projects;
+		this.confidence = confidence;
+		this.eh_barril = eh_barril;
+		this.fk_courseID = fk_courseID;
+	}
+
+	public Rating(int _id, int explanation, int requires_presence, int exam_dificulty, int free_to_answers,
+			int projects, int confidence, short eh_barril, int fk_courseID) {
+		this._id = _id;
+		this.explanation = explanation;
+		this.requires_presence = requires_presence;
+		this.exam_dificulty = exam_dificulty;
+		this.free_to_answers = free_to_answers;
+		this.projects = projects;
+		this.confidence = confidence;
+		this.eh_barril = eh_barril;
+		this.fk_courseID = fk_courseID;
+	}
+
+
+
 	public int getExplanation() {
 		return explanation;
 	}
@@ -56,13 +94,54 @@ public class Rating {
 	public void setConfidence(int confidence) {
 		this.confidence = confidence;
 	}
-	public boolean isEh_barril() {
+	public short isEh_barril() {
 		return eh_barril;
 	}
-	public void setEh_barril(boolean eh_barril) {
+	public void setEh_barril(short eh_barril) {
 		this.eh_barril = eh_barril;
 	}
-	
-	
-	
+
+	public int getId() {
+		return _id;
+	}
+
+	public int getCourseID() {
+		return fk_courseID;
+	}
+
+	public void setCourseID(int courseID) {
+		this.fk_courseID = courseID;
+	}
+
+	public String toString(){
+    	return "id:"+ _id+"| "+explanation+","+requires_presence+","+exam_dificulty+","+free_to_answers+
+    	","+projects+","+confidence+","+eh_barril+" |\n";
+    }
+
+	/** ____________DAO______________*/
+	private static RatingSQLite dao = new RatingSQLite();
+	public void save(){
+		if(_id != 0 && dao.find(_id) != null)
+			dao.update(this);
+		else
+			dao.create(this);
+	}
+
+	public void delete(){
+		if(dao.find(_id) != null)
+			dao.delete(this);
+	}
+
+	public static List<Rating> all(){
+		return dao.all();
+	}
+
+	public static Rating find(int pk){
+		return dao.find(pk);
+	}
+
+	public static List<Rating> whereCourse(int FK){
+		return dao.whereCourse(FK);
+	}
+
 }
