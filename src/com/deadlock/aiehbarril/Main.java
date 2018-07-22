@@ -81,7 +81,7 @@ public class Main extends Application {
     	Parent fxmlRatingFeedback = FXMLLoader.load(getClass().getResource("view/RatingFeedback.fxml"));
     	ratingFeedback = new Scene(fxmlRatingFeedback);
 
-    	primaryStage.setScene(registerCourse);
+    	primaryStage.setScene(searchCourse);
     	primaryStage.show();
 
 	}
