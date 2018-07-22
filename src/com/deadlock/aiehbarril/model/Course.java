@@ -1,78 +1,100 @@
 package com.deadlock.aiehbarril.model;
 
+import java.util.List;
+
+import com.deadlock.aiehbarril.model.sqlite.CourseSQLite;
+
 //import java.time.LocalDate;
 
 //import javafx.beans.property.IntegerProperty;
 //import javafx.beans.property.SimpleIntegerProperty;
 //import javafx.beans.property.ObjectProperty;
 //import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+
 
 /**
  * Classe Model para uma Course (disciplina).
  */
 public class Course {
 
-    private final StringProperty alias;
-    private final StringProperty professor;
-    private final StringProperty code;
-//    private final ObjectProperty<Rating> rate;
+	private int _id;
+	private Integer id = new Integer(_id);
 
-    public Course() {
-        this(null, null);
+
+    private String alias;
+    private String professor;
+
+    public Course(String alias, String professor) {
+    	this.alias = alias;
+        this.professor = professor;
     }
-
     /**
      * @param alias nome da disciplina.
      * @param professor professor que leciona a disciplina.
      */
-    public Course(String alias, String professor) {
-        this.alias = new SimpleStringProperty(alias);
-        this.professor = new SimpleStringProperty(professor);
+    public Course(int _id, String alias, String professor) {
+    	this._id = _id;
+        this.alias = alias;
+        this.professor = professor;
 
-        // Alguns dados de exemplo, apenas para testes.
-        this.code = new SimpleStringProperty("#");
-//        this.rate = new SimpleObjectProperty<Rating>();
     }
+
+    public int getId() {
+		return _id;
+	}
 
     public String getAlias() {
-        return alias.get();
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
+	public String getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(String professor) {
+		this.professor = professor;
+	}
+
+	public String toString(){
+    	return "\nid: "+_id+" | Disciplina: "+alias+" | Professor: "+professor+"\n";
     }
 
-    public void setAlias(String newAlias) {
-        this.alias.set(newAlias);
-    }
+	/** ____________DAO______________*/
+	private static CourseSQLite dao = new CourseSQLite();
+	public void save(){
+		if(id != null && dao.find(_id) != null)
+			dao.update(this);
+		else{
+			dao.create(this);
+			this._id = dao.find()._id;
+		}
 
-    public StringProperty aliasProperty() {
-        return alias;
-    }
+	}
 
-    public String getProfessor() {
-        return professor.get();
-    }
+	public void delete(){
+		if(dao.find(_id) != null)
+			dao.delete(this);
+	}
 
-    public void setProfessor(String newProfessor) {
-        this.professor.set(newProfessor);
-    }
+	public static List<Course> all(){
+		return dao.all();
+	}
 
-    public StringProperty professorProperty() {
-        return professor;
-    }
+	public static Course find(int pk){
+		return dao.find(pk);
+	}
 
-    public String getCode() {
-        return code.get();
-    }
+	public static List<Course> whereAlias(String alias){
+		return dao.whereAlias(alias);
+	}
 
-    public void setCode(String newCode) {
-        this.code.set(newCode);
-    }
-
-    public StringProperty codeProperty() {
-        return code;
-    }
-
-    /* ToDo - add getter e setter para  o objeto rating*/
+	public static List<Course> whereProfessor(String professor){
+		return dao.whereProfessor(professor);
+	}
 }
 
 

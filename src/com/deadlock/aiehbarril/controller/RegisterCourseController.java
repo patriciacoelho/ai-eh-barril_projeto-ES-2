@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 
 import com.deadlock.aiehbarril.Main;
 //import com.deadlock.aiehbarril.model.Course;
+import com.deadlock.aiehbarril.model.Course;
 
 public class RegisterCourseController implements Initializable {
 
@@ -21,21 +22,12 @@ public class RegisterCourseController implements Initializable {
 	@FXML
 	private TextField professor;
 
-//	private Course course;
 	private boolean registerClicked = false;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 
 	}
-
-//	public void setCourse(Course course) {
-//        this.course = course;
-//
-//        alias.setText(course.getAlias());
-//        professor.setText(course.getProfessor());
-//    }
 
 	public boolean isRegisterClicked() {
         return registerClicked;
@@ -57,17 +49,14 @@ public class RegisterCourseController implements Initializable {
     private void handleRegister(ActionEvent event) {
 
         if (isInputValid()) {
-//        	String newAlias = alias.getText();
-        	System.out.print(alias.getText()+"\n");
-        	System.out.print(professor.getText());
-        	/** Erro */
-//            course.setAlias(newAlias);
-//            course.setProfessor(professor.getText());
 
             registerClicked = true;
 
+            Course newCourse = new Course(alias.getText(),professor.getText());
+            newCourse.save();
+
             // vai pra a próxima tela
-            Main.changeScreen("view/CourseProfile.fxml");
+            Main.changeScreen("view/CourseProfile.fxml",newCourse);
         }
     }
 
