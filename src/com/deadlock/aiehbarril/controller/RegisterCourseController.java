@@ -1,54 +1,104 @@
 package com.deadlock.aiehbarril.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import com.deadlock.aiehbarril.Main;
-import com.deadlock.aiehbarril.model.Course;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
-public class RegisterCourseController { /*
+//import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import com.deadlock.aiehbarril.Main;
+//import com.deadlock.aiehbarril.model.Course;
+
+public class RegisterCourseController implements Initializable {
 
 	@FXML
-    private TableView<Course> personTable;
-    @FXML
-    private TableColumn<Course, String> firstNameColumn;
-    @FXML
-    private TableColumn<Course, String> lastNameColumn;
+	private TextField alias;
+	@FXML
+	private TextField professor;
 
-    @FXML
-    private Label firstNameLabel;
-    @FXML
-    private Label lastNameLabel;
-    @FXML
-    private Label streetLabel;
-    @FXML
-    private Label postalCodeLabel;
-    @FXML
-    private Label cityLabel;
-    @FXML
-    private Label birthdayLabel;
+//	private Course course;
+	private boolean registerClicked = false;
 
- // Reference to the main application.
-    private Main mainApp;
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
 
-    public RegisterCourseController() {
-    	//construtor roda antes do initialize()
+	}
+
+//	public void setCourse(Course course) {
+//        this.course = course;
+//
+//        alias.setText(course.getAlias());
+//        professor.setText(course.getProfessor());
+//    }
+
+	public boolean isRegisterClicked() {
+        return registerClicked;
     }
 
+	@FXML
+	private void alertLog() {
+		Alert alert = new Alert(AlertType.ERROR);
+	    alert.setTitle("");
+	    alert.setHeaderText("Hey");
+	    alert.setContentText("You find me");
+	    alert.showAndWait();
+	}
+
+	/**
+     * Chamado quando o usuário clica Cadastrar.
+     */
     @FXML
-    private void initialize() {/** Eh chamado ao ser carregado o FXML
-        // Inicializa a tablea de pessoa com duas colunas.
-//        firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
-//        lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+    private void handleRegister(ActionEvent event) {
+
+        if (isInputValid()) {
+//        	String newAlias = alias.getText();
+        	System.out.print(alias.getText()+"\n");
+        	System.out.print(professor.getText());
+        	/** Erro */
+//            course.setAlias(newAlias);
+//            course.setProfessor(professor.getText());
+
+            registerClicked = true;
+
+            // vai pra a próxima tela
+            Main.changeScreen("view/CourseProfile.fxml");
+        }
     }
 
-    /** É chamado pela aplicação principal para dar uma referência de volta a si mesmo.
-      *	@param mainApp
-    public void setMainApp(Main mainApp) {
-        this.mainApp = mainApp;
+    /**
+     * Valida a entrada do usuário nos campos de texto.
+     *
+     * @return true se a entrada é válida
+     */
+    private boolean isInputValid() {
+        String errorMessage = "";
 
-        // Adiciona os dados da observable list na tabela
-//        personTable.setItems(mainApp.getPersonData());
-    }*/
+        if (alias.getText() == null || alias.getText().length() == 0) {
+            errorMessage += "Insira o nome da disciplina\n";
+        }
+        if (professor.getText() == null || professor.getText().length() == 0) {
+            errorMessage += "Insira o nome do professor\n";
+        }
+        // TO DO - Se já tiver cadastrada retorna um erro
+
+
+        if (errorMessage.length() == 0) {
+            return true;
+        } else {
+            // Mostra a mensagem de erro.
+            Alert alert = new Alert(AlertType.ERROR);
+                      alert.setTitle("Erro");
+                      alert.setContentText(errorMessage);
+                alert.showAndWait();
+
+            return false;
+        }
+    }
+
 }

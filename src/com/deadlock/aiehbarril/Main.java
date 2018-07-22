@@ -2,23 +2,34 @@ package com.deadlock.aiehbarril;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 
-import java.io.IOException;
+//import java.io.IOException;
 
-import javafx.fxml.FXML;
+//import javafx.fxml.FXML;
+//import javafx.scene.layout.AnchorPane;
+//import javafx.scene.layout.BorderPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.AnchorPane;
+
 
 import com.deadlock.aiehbarril.model.Course;
 
 public class Main extends Application {
 
-	private Stage primaryStage;
-    private BorderPane rootLayout;
+	private static Stage currentStage;
+
+	private static Scene searchCourse;
+	private static Scene about;
+	private static Scene registerCourse;
+	private static Scene courseProfile;
+	private static Scene evaluate;
+	private static Scene lastStepRating;
+	private static Scene ratingFeedback;
+
+//    private BorderPane rootLayout;
 
     /** Os dados como uma observable list de Courses.	*/
     private ObservableList<Course> courseData = FXCollections.observableArrayList();
@@ -45,78 +56,64 @@ public class Main extends Application {
         return courseData;
     }
 
-	@Override
-	public void start(Stage primaryStage) {
-		this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("");
+    @Override
+	public void start(Stage primaryStage) throws Exception {
+    	currentStage = primaryStage;
 
-        initRootLayout();
+    	Parent fxmlSearchCourse = FXMLLoader.load(getClass().getResource("view/SearchCourse.fxml"));
+    	searchCourse = new Scene(fxmlSearchCourse);
 
-        showSearchCourse();
+    	Parent fxmlAbout = FXMLLoader.load(getClass().getResource("view/About.fxml"));
+    	about = new Scene(fxmlAbout);
+
+    	Parent fxmlRegisterCourse = FXMLLoader.load(getClass().getResource("view/RegisterCourse.fxml"));
+    	registerCourse = new Scene(fxmlRegisterCourse);
+
+    	Parent fxmlCourseProfile = FXMLLoader.load(getClass().getResource("view/CourseProfile.fxml"));
+    	courseProfile = new Scene(fxmlCourseProfile);
+
+    	Parent fxmlEvaluate = FXMLLoader.load(getClass().getResource("view/Evaluate.fxml"));
+    	evaluate = new Scene(fxmlEvaluate);
+
+    	Parent fxmlLastStepRating = FXMLLoader.load(getClass().getResource("view/LastStepRating.fxml"));
+    	lastStepRating = new Scene(fxmlLastStepRating);
+
+    	Parent fxmlRatingFeedback = FXMLLoader.load(getClass().getResource("view/RatingFeedback.fxml"));
+    	ratingFeedback = new Scene(fxmlRatingFeedback);
+
+    	primaryStage.setScene(registerCourse);
+    	primaryStage.show();
 
 	}
 
-	/**
-     * Inicializa o root layout (layout base).
-     */
-    public void initRootLayout() {
-        try {
-            // Carrega o root layout do arquivo fxml.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/RootLayout.fxml"));
-            rootLayout = (BorderPane) loader.load();
-
-            // Mostra a scene (cena) contendo o root layout.
-            Scene scene = new Scene(rootLayout);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void changeScreen(String url) {
+    	switch (url){
+    	case "view/SearchCourse.fxml":
+    		currentStage.setScene(searchCourse);
+    		break;
+    	case "view/About.fxml":
+    		currentStage.setScene(about);
+    		break;
+    	case "view/RegisterCourse.fxml":
+    		currentStage.setScene(registerCourse);
+    		break;
+    	case "view/CourseProfile.fxml":
+    		currentStage.setScene(courseProfile);
+    		break;
+    	case "view/Evaluate.fxml":
+    		currentStage.setScene(evaluate);
+    		break;
+    	case "view/LastStepRating.fxml":
+    		currentStage.setScene(lastStepRating);
+    		break;
+    	case "view/RatingFeedback.fxml":
+    		currentStage.setScene(ratingFeedback);
+    		break;
+    	}
     }
 
-    /**
-     * Mostra a view SearchCourse dentro do root layout.
-     */
-    public void showSearchCourse() {
-        try {
-            // Carrega o person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/SearchCourse.fxml"));
-            AnchorPane searchCourse = (AnchorPane) loader.load();
-
-            // Define o person overview dentro do root layout.
-            rootLayout.setCenter(searchCourse);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Chamado quando o usuário clica em cadastrar disciplina.
-     * Abre a view RegisterCourse
-     */
-    @FXML
-    private void handleRegisterCourse() {
-    	try {
-            // Carrega o person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/RegisterCourse.fxml"));
-            AnchorPane registerCourse = (AnchorPane) loader.load();
-
-            // Define o person overview dentro do root layout.
-            rootLayout.setCenter(registerCourse);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Retorna o palco principal.
-     * @return
-     */
-    public Stage getPrimaryStage() {
-        return primaryStage;
+    public Stage getCurrentStage() {
+        return currentStage;
     }
 
     public static void main(String[] args) {
