@@ -24,7 +24,7 @@ public class Main extends Application {
 	private static Scene about;
 	private static Scene registerCourse;
 	private static Scene courseProfile;
-	private static Scene evaluate;
+	private static Scene rateCourse;
 	private static Scene lastStepRating;
 	private static Scene ratingFeedback;
 
@@ -86,8 +86,8 @@ public class Main extends Application {
     	Parent fxmlCourseProfile = FXMLLoader.load(getClass().getResource("view/CourseProfile.fxml"));
     	courseProfile = new Scene(fxmlCourseProfile);
 
-    	Parent fxmlEvaluate = FXMLLoader.load(getClass().getResource("view/Evaluate.fxml"));
-    	evaluate = new Scene(fxmlEvaluate);
+    	Parent fxmlRateCourse = FXMLLoader.load(getClass().getResource("view/RateCourse.fxml"));
+    	rateCourse = new Scene(fxmlRateCourse);
 
     	Parent fxmlLastStepRating = FXMLLoader.load(getClass().getResource("view/LastStepRating.fxml"));
     	lastStepRating = new Scene(fxmlLastStepRating);
@@ -118,9 +118,9 @@ public class Main extends Application {
     		currentStage.setScene(courseProfile);
     		notifyAllListeners("CourseProfile",userData);
     		break;
-    	case "view/Evaluate.fxml":
-    		currentStage.setScene(evaluate);
-    		notifyAllListeners("Evaluate",userData);
+    	case "view/RateCourse.fxml":
+    		currentStage.setScene(rateCourse);
+    		notifyAllListeners("RateCourse",userData);
     		break;
     	case "view/LastStepRating.fxml":
     		currentStage.setScene(lastStepRating);
