@@ -103,6 +103,33 @@ public class CourseSQLite extends SQLiteBase {
 		}
 	}
 
+//	SELECT *
+//	FROM    TABLE
+//	WHERE   ID = (SELECT MAX(ID)  FROM TABLE);
+
+	public Course find(){
+		Course result = null;
+		conn = open();
+		try{
+			PreparedStatement stm = conn.prepareStatement("SELECT * FROM Courses WHERE id = (SELECT MAX(id)  FROM Courses);");
+
+			ResultSet rs = stm.executeQuery();
+
+			if(rs.next()){
+				Course c = new Course(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3));
+				result = c;
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
+	}
+
 	public Course find(int PK){
 		Course result = null;
 		conn = open();

@@ -104,35 +104,35 @@ public class Main extends Application {
     	switch (url){
     	case "view/SearchCourse.fxml":
     		currentStage.setScene(searchCourse);
-    		notifyAllListeners("SearchCourse",userData);
+    		notifyAllListeners("view/SearchCourse.fxml",userData);
     		break;
     	case "view/About.fxml":
     		currentStage.setScene(about);
-    		notifyAllListeners("About",userData);
+    		notifyAllListeners("view/About.fxml",userData);
     		break;
     	case "view/RegisterCourse.fxml":
     		currentStage.setScene(registerCourse);
-    		notifyAllListeners("RegisterCourse",userData);
+    		notifyAllListeners("view/RegisterCourse.fxml",userData);
     		break;
     	case "view/CourseProfile.fxml":
     		currentStage.setScene(courseProfile);
-    		notifyAllListeners("CourseProfile",userData);
+    		notifyAllListeners("view/CourseProfile.fxml",userData);
     		break;
     	case "view/Evaluate.fxml":
     		currentStage.setScene(evaluate);
-    		notifyAllListeners("Evaluate",userData);
+    		notifyAllListeners("view/Evaluate.fxml",userData);
     		break;
     	case "view/LastStepRating.fxml":
     		currentStage.setScene(lastStepRating);
-    		notifyAllListeners("LastStepRating",userData);
+    		notifyAllListeners("view/LastStepRating.fxml",userData);
     		break;
     	case "view/RatingFeedback.fxml":
     		currentStage.setScene(ratingFeedback);
-    		notifyAllListeners("RatingFeedback",userData);
+    		notifyAllListeners("view/RatingFeedback.fxml",userData);
     		break;
     	}
     }
-    
+
     public static void changeScreen(String url) {
     	changeScreen(url,null);
     }
@@ -144,23 +144,23 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
     //-------------------
-    
+
     private static ArrayList<OnChangeScreen> listeners = new ArrayList<>();
-    
+
     public static interface OnChangeScreen{
     	void onScreenChanged(String newScreen, Object userData);
     }
-    
+
     public static void addOnChangeScreenListener(OnChangeScreen newListener) {
     	listeners.add(newListener);
     }
-    
+
     private static void notifyAllListeners(String newScreen, Object userData) {
     	for(OnChangeScreen l : listeners) {
     		l.onScreenChanged(newScreen, userData);
     	}
     }
-    
+
 }

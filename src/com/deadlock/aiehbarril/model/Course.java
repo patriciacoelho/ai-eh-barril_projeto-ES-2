@@ -17,7 +17,9 @@ import com.deadlock.aiehbarril.model.sqlite.CourseSQLite;
  */
 public class Course {
 
-	private int _id = 0;
+	private int _id;
+	private Integer id = new Integer(_id);
+
 
     private String alias;
     private String professor;
@@ -58,16 +60,19 @@ public class Course {
 	}
 
 	public String toString(){
-    	return "id: "+_id+" | Disciplina: "+alias+" | Professor: "+professor+"\n";
+    	return "\nid: "+_id+" | Disciplina: "+alias+" | Professor: "+professor+"\n";
     }
 
 	/** ____________DAO______________*/
 	private static CourseSQLite dao = new CourseSQLite();
 	public void save(){
-		if(_id != 0 && dao.find(_id) != null)
+		if(id != null && dao.find(_id) != null)
 			dao.update(this);
-		else
+		else{
 			dao.create(this);
+			this._id = dao.find()._id;
+		}
+
 	}
 
 	public void delete(){
