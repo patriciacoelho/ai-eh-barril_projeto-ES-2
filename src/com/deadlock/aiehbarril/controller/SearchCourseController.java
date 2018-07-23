@@ -10,8 +10,9 @@ import com.deadlock.aiehbarril.model.Course;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.control.Alert.AlertType;
 
 public class SearchCourseController implements Initializable {
 	
@@ -52,14 +53,18 @@ public class SearchCourseController implements Initializable {
 		Main.changeScreen("view/RegisterCourse.fxml");
 	}
 	
-	String course = null;
 	@FXML
-	private void handleSearch(KeyEvent event) {// nao terminado
-		String course = new String(); //tá mostrando todo mundo que tá cadastrado no banco
+	private void handleSearch(ActionEvent event) {
 		List<Course> result;
-		course += event.getText();
-		result = Course.whereAlias(course);
-		System.out.print(result.toString());
+		result = Course.whereAlias(search.getText());
+		if(!result.isEmpty()) {
+			Main.changeScreen("view/CourseProfile.fxml", result.get(0));
+		} else {
+			Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setContentText("Disciplina não econtrada!");
+            alert.showAndWait();
+		}
 		
 	}
 }
