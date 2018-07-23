@@ -133,7 +133,7 @@ public class CourseSQLite extends SQLiteBase {
 		try{
 			PreparedStatement stm = conn.prepareStatement("SELECT * FROM Courses WHERE alias LIKE ? ORDER BY alias DESC;");
 
-			stm.setString(1, "%"+alias+"%");
+			stm.setString(1, alias+"%");
 			ResultSet rs = stm.executeQuery();
 
 			while(rs.next()){

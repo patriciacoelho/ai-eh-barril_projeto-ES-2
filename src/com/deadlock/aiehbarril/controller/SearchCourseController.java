@@ -1,7 +1,7 @@
 package com.deadlock.aiehbarril.controller;
 
 import java.net.URL;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.deadlock.aiehbarril.Main;
@@ -10,9 +10,11 @@ import com.deadlock.aiehbarril.model.Course;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
+
 
 public class SearchCourseController implements Initializable {
 	
@@ -34,6 +36,11 @@ public class SearchCourseController implements Initializable {
 	
 	@FXML
 	private TextField search;
+	@FXML
+	ComboBox<String> suggestionsPane = new ComboBox<>();
+	@FXML
+	private VBox pane;
+	
 	
 	@FXML
 	private void handleAbout(ActionEvent event) {
@@ -54,17 +61,33 @@ public class SearchCourseController implements Initializable {
 	}
 	
 	@FXML
-	private void handleSearch(ActionEvent event) {
-		List<Course> result;
-		result = Course.whereAlias(search.getText());
-		if(!result.isEmpty()) {
-			Main.changeScreen("view/CourseProfile.fxml", result.get(0));
+	private void handleSearch(KeyEvent event) {
+		ArrayList<Course> result = new ArrayList<>();
+		String course = search.getText();
+		System.out.print("***"+course);
+		if(Course.whereAlias(course).isEmpty()) {
+			System.out.print("Discilina nao encontrada");
 		} else {
-			Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Erro");
-            alert.setContentText("Disciplina não econtrada!");
-            alert.showAndWait();
+			int i = 0;
+			int size = Course.whereAlias(course).size();
+			for(i=0;i<size;i++) {
+				result.add(Course.whereAlias(course).get(i));
+				i++;
+			}
+			System.out.println(result.toString());
+//			while(!result.isEmpty()) {
+//				
+//			}
+			//result.add(Course.whereAlias(course).get(0));
+//			suggestionsPane.getItems().add(result.get(0).getAlias());
+//			pane.getChildren().add(suggestionsPane);  
+//			pane.setLayoutX(10);
+//			pane.setLayoutY(10);
 		}
 		
+		
+		
+		
 	}
+		
 }
