@@ -100,7 +100,7 @@ public class Main extends Application {
 
 	}
 
-    public static void changeScreen(String url, Object userData) {
+    public static void changeScreen(String url, Course userData) {
     	switch (url){
     	case "view/SearchCourse.fxml":
     		currentStage.setScene(searchCourse);
@@ -150,14 +150,14 @@ public class Main extends Application {
     private static ArrayList<OnChangeScreen> listeners = new ArrayList<>();
     
     public static interface OnChangeScreen{
-    	void onScreenChanged(String newScreen, Object userData);
+    	void onScreenChanged(String newScreen, Course userData);
     }
     
     public static void addOnChangeScreenListener(OnChangeScreen newListener) {
     	listeners.add(newListener);
     }
     
-    private static void notifyAllListeners(String newScreen, Object userData) {
+    private static void notifyAllListeners(String newScreen, Course userData) {
     	for(OnChangeScreen l : listeners) {
     		l.onScreenChanged(newScreen, userData);
     	}

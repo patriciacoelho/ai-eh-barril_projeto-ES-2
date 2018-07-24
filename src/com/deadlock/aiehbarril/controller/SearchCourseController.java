@@ -10,25 +10,23 @@ import com.deadlock.aiehbarril.model.Course;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.control.Alert.AlertType;
 
 public class SearchCourseController implements Initializable {
 	
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-
-	}
-	public void initialize() {
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
 			@Override
-			public void onScreenChanged(String newScreen, Object userData) {
-				System.out.print("Nova tela "+newScreen+" "+userData);
+			public void onScreenChanged(String newScreen, Course userData) {
+				if(newScreen.equals("SearchCourse")) {
+					search.setText("");
+				}
 			}
 		});
-
 	}
 	
 	@FXML
@@ -52,14 +50,18 @@ public class SearchCourseController implements Initializable {
 		Main.changeScreen("view/RegisterCourse.fxml");
 	}
 	
-	String course = null;
 	@FXML
-	private void handleSearch(KeyEvent event) {// nao terminado
-		String course = new String(); //tá mostrando todo mundo que tá cadastrado no banco
-		List<Course> result;
-		course += event.getText();
-		result = Course.whereAlias(course);
-		System.out.print(result.toString());
+	private void handleSearch(ActionEvent event) {// nao terminado
+		List<Course> course;
+		course = Course.whereAlias(search.getText());
+		if(course.isEmpty()) {
+			 Alert alert = new Alert(AlertType.ERROR);
+             alert.setTitle("Erro");
+             alert.setContentText("Disciplina não encontrada!");
+             alert.showAndWait();
+		} else {
+			Main.changeScreen("view/CourseProfile.fxml",course.get(0));
+		}
 		
 	}
 }
