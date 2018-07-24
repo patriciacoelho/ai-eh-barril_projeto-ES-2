@@ -63,12 +63,12 @@ public class CourseProfileController implements Initializable {
 	@FXML
 	private Label lbl_headProfessor;
 
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
 			@Override
 			public void onScreenChanged(String newScreen, Object userData) {
-
 				if (newScreen.equals("view/CourseProfile.fxml")) {
 					if (userData != null) {
 						selectedCourse = (Course) userData;
@@ -86,7 +86,7 @@ public class CourseProfileController implements Initializable {
 	@FXML
 	private void handleEvaluate(ActionEvent event) {
 		System.out.print("Evaluate\n");
-		Main.changeScreen("view/RateCourse.fxml");
+		Main.changeScreen("view/RateCourse.fxml",selectedCourse);
 	}
 
 	@FXML

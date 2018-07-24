@@ -120,7 +120,7 @@ public class Main extends Application {
     		break;
     	case "view/RateCourse.fxml":
     		currentStage.setScene(rateCourse);
-    		notifyAllListeners("RateCourse",userData);
+    		notifyAllListeners("view/RateCourse.fxml",userData);
     		break;
     	case "view/LastStepRating.fxml":
     		currentStage.setScene(lastStepRating);

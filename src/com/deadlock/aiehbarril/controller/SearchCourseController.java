@@ -22,8 +22,9 @@ public class SearchCourseController implements Initializable {
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
 			@Override
 			public void onScreenChanged(String newScreen, Object userData) {
-				if(newScreen.equals("SearchCourse")) {
+				if(newScreen.equals("view/SearchCourse.fxml")) {
 					search.setText("");
+					System.out.print("OLHE ELA!!!!");
 				}
 			}
 		});
