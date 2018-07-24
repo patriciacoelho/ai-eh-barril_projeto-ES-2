@@ -54,9 +54,12 @@ public class SearchCourseController implements Initializable {
 					if(!courses.isEmpty()) {
 						/* Popula a lista */
 						drop_results.setVisible(true);
+						int i = 0;
 						for(Course c:courses){
+							if( i > 4 )	break;
 							drop_results.getItems().add(c.getAlias()+" - "+c.getProfessor());
 							System.out.println(c.getAlias());
+							i++;
 						}
 
 					} else{
