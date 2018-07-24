@@ -60,7 +60,7 @@ public class Course {
 	}
 
 	public String toString(){
-    	return "\nid: "+_id+" | Disciplina: "+alias+" | Professor: "+professor+"\n";
+    	return alias + " - " + professor;
     }
 
 	/** ____________DAO______________*/

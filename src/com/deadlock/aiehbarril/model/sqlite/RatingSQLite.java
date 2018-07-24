@@ -166,7 +166,7 @@ public class RatingSQLite extends SQLiteBase {
 		}
 		return result;
 	}
-
+	
 	public List<Rating> whereCourse(int FK){//usefull
 		ArrayList<Rating> result = new ArrayList<>();
 		conn = open();
