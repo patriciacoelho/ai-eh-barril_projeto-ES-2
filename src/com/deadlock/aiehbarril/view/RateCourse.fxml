@@ -36,12 +36,12 @@
       <AnchorPane layoutX="10.0" layoutY="51.0" prefHeight="83.0" prefWidth="300.0" style="-fx-background-color: #a2a2a2;" />
       <AnchorPane layoutX="10.0" layoutY="49.0" prefHeight="83.0" prefWidth="297.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label layoutX="19.0" layoutY="14.0" text="Cálculo III" textFill="#565656">
+            <Label fx:id="headAlias" layoutX="19.0" layoutY="14.0" text="Cálculo III" textFill="#565656">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="42.0" text="Edson Araújo" />
+            <Label fx:id="headProfessor" layoutX="21.0" layoutY="42.0" text="Edson Araújo" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="191.0" prefHeight="240.0" prefWidth="300.0" style="-fx-background-color: #a2a2a2;">

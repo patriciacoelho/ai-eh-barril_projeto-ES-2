@@ -16,7 +16,7 @@ public class AboutController implements Initializable{
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
 			@Override
 			public void onScreenChanged(String newScreen, Object userData) {
-				//System.out.print("Nova tela "+newScreen+" "+userData);
+				System.out.print("Nova tela "+newScreen+" "+userData);
 			}
 		});
 

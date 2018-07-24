@@ -14,26 +14,69 @@ import javafx.scene.control.Label;
 public class CourseProfileController implements Initializable {
 
 	Course selectedCourse = null;
-	@FXML
-	private Label profile_alias;
-	@FXML
-	private Label profile_professor;
 
+	@FXML
+	private Label lbl_media_explanation;
+
+	@FXML
+	private Label lbl_media_examDificulty_text;
+
+	@FXML
+	private Label lbl_media_presence;
+
+	@FXML
+	private Label lbl_media_presence_text;
+
+	@FXML
+	private Label lbl_porcentagemEhBarril;
+
+	@FXML
+	private Label lbl_headAlias;
+
+	@FXML
+	private Label lbl_numVotos;
+
+	@FXML
+	private Label lbl_media_projects_text;
+
+	@FXML
+	private Label lbl_media_free_to_answers_text;
+
+	@FXML
+	private Label lbl_media_projects;
+
+	@FXML
+	private Label lbl_media_confidence;
+
+	@FXML
+	private Label lbl_media_explanation_text;
+
+	@FXML
+	private Label lbl_media_confidence_text;
+
+	@FXML
+	private Label lbl_media_examDificulty;
+
+	@FXML
+	private Label lbl_media_free_to_answers;
+
+	@FXML
+	private Label lbl_headProfessor;
+
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
-
 			@Override
 			public void onScreenChanged(String newScreen, Object userData) {
-				// TODO Auto-generated method stub
-				if(newScreen.equals("view/CourseProfile.fxml")){
-					if(userData != null){
+				if (newScreen.equals("view/CourseProfile.fxml")) {
+					if (userData != null) {
 						selectedCourse = (Course) userData;
-						profile_alias.setText(selectedCourse.getAlias());
-						profile_professor.setText(selectedCourse.getProfessor());
+						lbl_headAlias.setText(selectedCourse.getAlias());
+						lbl_headProfessor.setText(selectedCourse.getProfessor());
 					}
 					System.out.print(selectedCourse);
+
 				}
 			}
 		});
@@ -43,7 +86,7 @@ public class CourseProfileController implements Initializable {
 	@FXML
 	private void handleEvaluate(ActionEvent event) {
 		System.out.print("Evaluate\n");
-		Main.changeScreen("view/Evaluate.fxml");
+		Main.changeScreen("view/RateCourse.fxml",selectedCourse);
 	}
 
 	@FXML
