@@ -38,7 +38,7 @@ public class RateCourseController implements Initializable {
 	@FXML
 	private void handleEvaluate(ActionEvent event) {
 		System.out.print("Evaluate\n");
-		Main.changeScreen("view/Evaluate.fxml");
+		Main.changeScreen("view/RateCourse.fxml");
 	}
 
 	@FXML

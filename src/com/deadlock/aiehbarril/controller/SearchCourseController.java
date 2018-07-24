@@ -21,7 +21,7 @@ public class SearchCourseController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
 			@Override
-			public void onScreenChanged(String newScreen, Course userData) {
+			public void onScreenChanged(String newScreen, Object userData) {
 				if(newScreen.equals("SearchCourse")) {
 					search.setText("");
 				}

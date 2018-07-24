@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.deadlock.aiehbarril.Main;
-import com.deadlock.aiehbarril.model.Course;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +15,7 @@ public class AboutController implements Initializable{
 	public void initialize() {
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
 			@Override
-			public void onScreenChanged(String newScreen, Course userData) {
+			public void onScreenChanged(String newScreen, Object userData) {
 				System.out.print("Nova tela "+newScreen+" "+userData);
 			}
 		});

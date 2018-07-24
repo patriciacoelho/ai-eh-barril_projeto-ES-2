@@ -6,6 +6,7 @@ import com.deadlock.aiehbarril.model.sqlite.RatingSQLite;
 
 public class Rating {
 	private int _id;
+	private Integer id = new Integer(_id);
 
 	private int explanation;
 	private int requires_presence;
@@ -19,7 +20,6 @@ public class Rating {
 
 
 	public Rating() {
-		this._id = 0;
 		this.explanation = 0;
 		this.requires_presence = 0;
 		this.exam_dificulty = 0;
@@ -121,7 +121,7 @@ public class Rating {
 	/** ____________DAO______________*/
 	private static RatingSQLite dao = new RatingSQLite();
 	public void save(){
-		if(_id != 0 && dao.find(_id) != null)
+		if(id != null && dao.find(_id) != null)
 			dao.update(this);
 		else
 			dao.create(this);
