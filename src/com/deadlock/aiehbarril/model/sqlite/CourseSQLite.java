@@ -104,8 +104,8 @@ public class CourseSQLite extends SQLiteBase {
 	}
 
 //	SELECT *
-//	FROM    TABLE
-//	WHERE   ID = (SELECT MAX(ID)  FROM TABLE);
+//	FROM TABLE
+//	WHERE ID = (SELECT MAX(ID)  FROM TABLE);
 
 	public Course find(){
 		Course result = null;
