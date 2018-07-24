@@ -9,6 +9,7 @@ import com.deadlock.aiehbarril.model.Course;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,7 +24,7 @@ public class SearchCourseController implements Initializable {
 	private TextField search;
 
 	@FXML
-	protected ListView<String> drop_results;
+	protected ListView<Course> drop_results;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -45,11 +46,11 @@ public class SearchCourseController implements Initializable {
 		    public void changed(ObservableValue<? extends String> observable,
 		            String oldValue, String newValue) {
 
-		    	System.out.println("changeSearch "+ newValue);
+//		    	System.out.println("changeSearch "+ newValue);
 		    	drop_results.getItems().clear();
 		    	if( search.getText().length() > 3 ){
 					List<Course> courses;
-					System.out.println("vou ver no estoque...");
+//					System.out.println("vou ver no estoque...");
 					courses = Course.whereAlias(search.getText());
 					if(!courses.isEmpty()) {
 						/* Popula a lista */
@@ -57,16 +58,30 @@ public class SearchCourseController implements Initializable {
 						int i = 0;
 						for(Course c:courses){
 							if( i > 4 )	break;
-							drop_results.getItems().add(c.getAlias()+" - "+c.getProfessor());
-							System.out.println(c.getAlias());
+							drop_results.getItems().add(c);
+//							System.out.println(c.getAlias());
 							i++;
 						}
-
 					} else{
 						drop_results.setVisible(false);
 					}
 				} else{
 					drop_results.setVisible(false);
+				}
+		    }
+		});
+
+		drop_results.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Course>() {
+		    @Override
+		    public void changed(ObservableValue<? extends Course> observable,
+		            Course oldValue, Course newValue) {
+
+		    	ObservableList<Course> ol = drop_results.getSelectionModel().getSelectedItems();
+				if(!ol.isEmpty()) {
+					Course sel = ol.get(0);
+					System.out.println("VAI PARA PROX. TELA");
+					System.out.println(sel);
+					Main.changeScreen("view/CourseProfile.fxml",sel);
 				}
 		    }
 		});
@@ -91,7 +106,7 @@ public class SearchCourseController implements Initializable {
 	}
 
 	@FXML
-	private void handleSearch(ActionEvent event) {// nao terminado
+	private void handleSearch(ActionEvent event) {
 		List<Course> course;
 		course = Course.whereAlias(search.getText());
 		if(course.isEmpty()) {
@@ -105,9 +120,4 @@ public class SearchCourseController implements Initializable {
 
 	}
 
-//	@FXML
-//	private void changeSearch(ActionEvent event){
-//		System.out.println("changeSearch");
-//
-//	}
 }
