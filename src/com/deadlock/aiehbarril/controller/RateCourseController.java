@@ -6,10 +6,12 @@ import java.util.ResourceBundle;
 import com.deadlock.aiehbarril.Main;
 import com.deadlock.aiehbarril.model.Course;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
 public class RateCourseController implements Initializable {
 
@@ -19,7 +21,10 @@ public class RateCourseController implements Initializable {
 
     @FXML
     private Label headProfessor;
-
+    
+    @FXML
+    private ImageView dropMenu;
+    
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -31,6 +36,7 @@ public class RateCourseController implements Initializable {
 						selectedCourse = (Course) userData;
 						headAlias.setText(selectedCourse.getAlias()); // TÁ DANDO ERRO AQUI
 						headProfessor.setText(selectedCourse.getProfessor());
+						//answer.setText(selectedCourse.getAlias()+" com "+selectedCourse.getProfessor()+"?");
 						System.out.print("cabecalho");
 					}
 					//System.out.print(selectedCourse);
@@ -69,6 +75,14 @@ public class RateCourseController implements Initializable {
 	private void handleSearchCourse(ActionEvent event) {
 		System.out.print("SearchCourse\n");
 		Main.changeScreen("view/SearchCourse.fxml");
+	}
+	
+	@FXML
+	private void handleDropMenu(ActionEvent event) {
+		System.out.print("drop menu\n");
+		
+		
+		
 	}
 
 }

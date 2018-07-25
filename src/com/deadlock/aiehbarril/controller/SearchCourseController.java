@@ -48,7 +48,7 @@ public class SearchCourseController implements Initializable {
 
 //		    	System.out.println("changeSearch "+ newValue);
 		    	drop_results.getItems().clear();
-		    	if( search.getText().length() > 3 ){
+		    	if( search.getText().length() >= 3 ){
 					List<Course> courses;
 //					System.out.println("vou ver no estoque...");
 					courses = Course.whereAlias(search.getText());

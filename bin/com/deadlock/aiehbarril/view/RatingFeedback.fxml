@@ -13,7 +13,7 @@
       <Canvas height="41.0" layoutX="9.0" layoutY="154.0" width="300.0" />
       <AnchorPane prefHeight="41.0" prefWidth="320.0" style="-fx-background-color: #333333;">
          <children>
-            <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="279.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="dropMenu" fitHeight="30.0" fitWidth="27.0" layoutX="279.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/more.png" />
                </image>
@@ -35,8 +35,10 @@
             <Label fx:id="headProfessor" layoutX="21.0" layoutY="42.0" text="Edson Araújo" />
          </children>
       </AnchorPane>
-      <Label layoutX="37.0" layoutY="166.0" text="Ei como é cálculo III com Edson?" />
+      <Label layoutX="37.0" layoutY="166.0" text="Ei como é " />
       <Label layoutX="37.0" layoutY="232.0" text="Vlw, obrigado por compartilhar" />
       <Label layoutX="232.0" layoutY="201.0" text="aí eh barril" />
+      <Label layoutX="93.0" layoutY="166.0" text="alias" />
+      <Label layoutX="120.0" layoutY="166.0" />
    </children>
 </AnchorPane>

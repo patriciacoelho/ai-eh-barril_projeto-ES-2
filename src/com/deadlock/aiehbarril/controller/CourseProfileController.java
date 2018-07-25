@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
 public class CourseProfileController implements Initializable {
 
@@ -62,6 +63,9 @@ public class CourseProfileController implements Initializable {
 
 	@FXML
 	private Label lbl_headProfessor;
+	
+	 @FXML
+	 private ImageView dropMenu;
 
 	
 	@Override
@@ -94,5 +98,13 @@ public class CourseProfileController implements Initializable {
 		System.out.print("SearchCourse\n");
 		Main.changeScreen("view/SearchCourse.fxml");
 	}
-
+	
+	@FXML
+	private void handleDropMenu(ActionEvent event) {
+		System.out.print("drop menu\n");
+		
+		
+		
+	}
+	
 }
