@@ -8,12 +8,15 @@ public class Rating {
 	private int _id;
 	private Integer id = new Integer(_id);
 
+	private int ponctuality;
 	private int explanation;
+	private int exam_correction;
+	private int exam_second;
 	private int requires_presence;
-	private int exam_dificulty;
-	private int free_to_answers;
-	private int projects;
 	private int confidence;
+	private int exam_by_lectures;
+	private int exams_content;
+	private int projects;
 	private short eh_barril;
 
 	private int fk_courseID;
@@ -22,36 +25,45 @@ public class Rating {
 	public Rating() {
 		this.explanation = 0;
 		this.requires_presence = 0;
-		this.exam_dificulty = 0;
-		this.free_to_answers = 0;
+		this.exam_second = 0;
+		this.ponctuality = 0;
 		this.projects = 0;
 		this.confidence = 0;
 		this.eh_barril = 0;
+		this.exam_correction = 0;
+		this.exam_by_lectures = 0;
+		this.exams_content = 0;
 	}
 
 
 
-	public Rating(int explanation, int requires_presence, int exam_dificulty, int free_to_answers, int projects,
-			int confidence, short eh_barril, int fk_courseID) {
+	public Rating(int ponctuality, int explanation, int exam_correction, int exam_second,
+			int requires_presence,int confidence, int exam_by_lectures, int exams_content, int projects,  short eh_barril, int fk_courseID) {
 		this.explanation = explanation;
 		this.requires_presence = requires_presence;
-		this.exam_dificulty = exam_dificulty;
-		this.free_to_answers = free_to_answers;
+		this.ponctuality = ponctuality;
+		this.exam_correction = exam_correction;
+		this.exam_by_lectures = exam_by_lectures;
 		this.projects = projects;
 		this.confidence = confidence;
+		this.exams_content = exams_content;
+		this.exam_second = exam_second;
 		this.eh_barril = eh_barril;
 		this.fk_courseID = fk_courseID;
 	}
 
-	public Rating(int _id, int explanation, int requires_presence, int exam_dificulty, int free_to_answers,
-			int projects, int confidence, short eh_barril, int fk_courseID) {
+	public Rating(int _id, int ponctuality, int explanation, int exam_correction, int exam_second,
+			int requires_presence,int confidence, int exam_by_lectures, int exams_content, int projects,  short eh_barril, int fk_courseID) {
 		this._id = _id;
 		this.explanation = explanation;
 		this.requires_presence = requires_presence;
-		this.exam_dificulty = exam_dificulty;
-		this.free_to_answers = free_to_answers;
+		this.exam_correction = exam_correction;
+		this.ponctuality = ponctuality;
 		this.projects = projects;
 		this.confidence = confidence;
+		this.exam_by_lectures = exam_by_lectures;
+		this.exam_second = exam_second;
+		this.exams_content = exams_content;
 		this.eh_barril = eh_barril;
 		this.fk_courseID = fk_courseID;
 	}
@@ -69,18 +81,6 @@ public class Rating {
 	}
 	public void setRequires_presence(int requires_presence) {
 		this.requires_presence = requires_presence;
-	}
-	public int getExam_dificulty() {
-		return exam_dificulty;
-	}
-	public void setExam_dificulty(int exam_dificulty) {
-		this.exam_dificulty = exam_dificulty;
-	}
-	public int getFree_to_answers() {
-		return free_to_answers;
-	}
-	public void setFree_to_answers(int free_to_answers) {
-		this.free_to_answers = free_to_answers;
 	}
 	public int getProjects() {
 		return projects;
@@ -114,8 +114,8 @@ public class Rating {
 	}
 
 	public String toString(){
-    	return "id:"+ _id+"| "+explanation+","+requires_presence+","+exam_dificulty+","+free_to_answers+
-    	","+projects+","+confidence+","+eh_barril+" |\n";
+    	return "id:"+ _id+"| "+ponctuality+", "+explanation+", "+exam_correction+", "+exam_second+", "+
+    			requires_presence+", "+confidence+", "+exam_by_lectures+", "+exams_content+", "+projects+","+eh_barril+" |\n";
     }
 
 	/** ____________DAO______________*/
