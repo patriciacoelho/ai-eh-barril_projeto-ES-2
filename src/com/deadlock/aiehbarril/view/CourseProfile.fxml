@@ -21,11 +21,21 @@
                   </ImageView>
                </graphic>
             </Button>
-            <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="275.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/more.png" />
-               </image>
-            </ImageView>
+            <MenuButton layoutX="238.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: #333333;">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleEvaluate" text="Avaliar" />
+                <MenuItem mnemonicParsing="false" onAction="#handleRegisterCourse" text="Cadastrar Novo" />
+                  <MenuItem mnemonicParsing="false" text="Vincular Conta" />
+                  <MenuItem mnemonicParsing="false" text="Desvincular Conta" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/more.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
          </children></AnchorPane>
       <Button layoutX="109.0" layoutY="436.0" minWidth="100.0" mnemonicParsing="false" onAction="#handleEvaluate" style="-fx-background-color: #000000;" text="Avaliar" textAlignment="CENTER" textFill="#fcfcfc">
          <font>

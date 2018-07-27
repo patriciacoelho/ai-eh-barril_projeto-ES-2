@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
 
 public class CourseProfileController implements Initializable {
 
@@ -63,6 +64,9 @@ public class CourseProfileController implements Initializable {
 	@FXML
 	private Label lbl_headProfessor;
 	
+	@FXML
+	private MenuButton dropMenu;
+	
 	
 
 	
@@ -95,5 +99,11 @@ public class CourseProfileController implements Initializable {
 	private void handleSearchCourse(ActionEvent event) {
 		System.out.print("SearchCourse\n");
 		Main.changeScreen("view/SearchCourse.fxml");
+	}
+	
+	@FXML
+	private void handleRegisterCourse(ActionEvent event) {
+		System.out.print("SearchCourse\n");
+		Main.changeScreen("view/RegisterCourse.fxml");
 	}
 }

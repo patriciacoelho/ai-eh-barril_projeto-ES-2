@@ -172,7 +172,7 @@ public class RateCourseController implements Initializable {
 	@FXML
 	private void handleEvaluate(ActionEvent event) {
 //		System.out.print("Evaluate\n");
-		Main.changeScreen("view/RateCourse.fxml");
+		Main.changeScreen("view/RateCourse.fxml",selectedCourse);
 	}
 
 	@FXML
@@ -181,5 +181,14 @@ public class RateCourseController implements Initializable {
 		System.out.print("\nSearchCourse\n");
 		Main.changeScreen("view/SearchCourse.fxml");
 	}
+	
+	@FXML
+	private void handleRegisterCourse(ActionEvent event) {
+		System.out.print("SearchCourse\n");
+		Main.changeScreen("view/RegisterCourse.fxml");
+	}
+	
+	
+	
 
 }

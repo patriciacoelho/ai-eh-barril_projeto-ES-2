@@ -14,11 +14,6 @@
       <Canvas height="41.0" layoutX="9.0" layoutY="154.0" width="300.0" />
       <AnchorPane prefHeight="41.0" prefWidth="320.0" style="-fx-background-color: #333333;">
          <children>
-            <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="279.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/more.png" />
-               </image>
-            </ImageView>
             <Button layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleCourseProfile" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: #333333;">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
@@ -27,6 +22,19 @@
                      </image>
                   </ImageView>
                </graphic></Button>
+            <MenuButton layoutX="238.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: #333333;">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleRegisterCourse" text="Cadastrar Novo" />
+                <MenuItem mnemonicParsing="false" text="Desvincular Conta" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/more.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
          </children></AnchorPane>
       <Button layoutX="109.0" layoutY="436.0" minWidth="100.0" mnemonicParsing="false" onAction="#handleLastStepRating" style="-fx-background-color: #000000;" text="Próximo" textAlignment="CENTER" textFill="#fcfcfc">
          <font>
