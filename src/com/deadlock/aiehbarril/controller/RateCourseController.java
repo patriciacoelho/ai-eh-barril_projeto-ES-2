@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 
 public class RateCourseController implements Initializable {
 
@@ -24,6 +25,12 @@ public class RateCourseController implements Initializable {
 
     @FXML
     private Label headProfessor;
+
+    @FXML
+    private AnchorPane optionTwo;
+
+    @FXML
+    private AnchorPane optionOne;
 
     @FXML
     private ToggleGroup q1;
@@ -123,6 +130,8 @@ public class RateCourseController implements Initializable {
 	@FXML
 	private void selectOne(ActionEvent event){
 		System.out.print("Aí eh Barril\n");
+		optionOne.setStyle("-fx-background-color:#c1c1c1;");
+		optionTwo.setStyle("-fx-background-color: #f8f8f8;");
 		currentRate.setEh_barril((short) 1);
 
 	}
@@ -130,6 +139,8 @@ public class RateCourseController implements Initializable {
 	@FXML
 	private void selectTwo(ActionEvent event){
 		System.out.print("Eh de boa\n");
+		optionTwo.setStyle("-fx-background-color:#c1c1c1;");
+		optionOne.setStyle("-fx-background-color: #f8f8f8;");
 		currentRate.setEh_barril((short) 0);
 
 	}
