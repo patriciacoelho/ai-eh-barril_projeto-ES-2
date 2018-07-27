@@ -18,14 +18,18 @@ public class RatingSQLite extends SQLiteBase {
 
 			PreparedStatement stm = conn.prepareStatement("CREATE TABLE IF NOT EXISTS Ratings ("+
 					"id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+					"ponctuality INTEGER,"+
 					"explanation INTEGER,"+
+					"exam_correction INTEGER,"+
+					"exam_second INTEGER,"+
 					"requires_presence INTEGER,"+
-					"exam_dificulty INTEGER,"+
-					"free_to_answers INTEGER,"+
-					"projects INTEGER,"+
 					"confidence INTEGER,"+
+					"exam_by_lectures INTEGER,"+
+					"exams_content INTEGER,"+
+					"projects INTEGER,"+
 					"eh_barril NUMERIC,"+
-					"FOREIGN KEY(fk_courseID) REFERENCES Courses(fk_courseID));");
+					"fk_courseID INTEGER, "+
+					"FOREIGN KEY(fk_courseID) REFERENCES Courses(id));");
 			stm.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -37,15 +41,18 @@ public class RatingSQLite extends SQLiteBase {
 	public void create(Rating c){//usefull
 		open();
 		try{
-			PreparedStatement stm = conn.prepareStatement("INSERT INTO Ratings VALUES(?,?,?,?,?,?,?,?,?);");
-			stm.setInt(2, c.getExplanation());
-			stm.setInt(3, c.getRequires_presence());
-			stm.setInt(4, c.getExam_dificulty());
-			stm.setInt(5, c.getFree_to_answers());
-			stm.setInt(6, c.getProjects());
+			PreparedStatement stm = conn.prepareStatement("INSERT INTO Ratings VALUES(?,?,?,?,?,?,?,?,?,?,?,?);");
+			stm.setInt(2, c.getPonctuality());
+			stm.setInt(3, c.getExplanation());
+			stm.setInt(4, c.getExam_correction());
+			stm.setInt(5, c.getExam_second());
+			stm.setInt(6, c.getRequires_presence());
 			stm.setInt(7, c.getConfidence());
-			stm.setShort(8, c.isEh_barril());
-			stm.setInt(9, c.getCourseID());
+			stm.setInt(8, c.getExam_by_lectures());
+			stm.setInt(9, c.getExams_content());
+			stm.setInt(10, c.getProjects());
+			stm.setShort(11, c.isEh_barril());
+			stm.setInt(12, c.getCourseID());
 
 			stm.executeUpdate();
 		}catch(SQLException e){
@@ -72,8 +79,11 @@ public class RatingSQLite extends SQLiteBase {
 						rs.getInt(5),
 						rs.getInt(6),
 						rs.getInt(7),
-						rs.getShort(8),
-						rs.getInt(9)
+						rs.getInt(8),
+						rs.getInt(9),
+						rs.getInt(10),
+						rs.getShort(11),
+						rs.getInt(12)
 						);
 				result.add(c);
 			}
@@ -101,15 +111,18 @@ public class RatingSQLite extends SQLiteBase {
 					"fk_courseID = ? "+
 					"WHERE id = ?;");
 
-			stm.setInt(1, c.getExplanation());
-			stm.setInt(2, c.getRequires_presence());
-			stm.setInt(3, c.getExam_dificulty());
-			stm.setInt(4, c.getFree_to_answers());
-			stm.setInt(5, c.getProjects());
+			stm.setInt(1, c.getPonctuality());
+			stm.setInt(2, c.getExplanation());
+			stm.setInt(3, c.getExam_correction());
+			stm.setInt(4, c.getExam_second());
+			stm.setInt(5, c.getRequires_presence());
 			stm.setInt(6, c.getConfidence());
-			stm.setShort(7, c.isEh_barril());
-			stm.setInt(8, c.getCourseID());
-			stm.setInt(3, c.getId());
+			stm.setInt(7, c.getExam_by_lectures());
+			stm.setInt(8, c.getExams_content());
+			stm.setInt(9, c.getProjects());
+			stm.setShort(10, c.isEh_barril());
+			stm.setInt(11, c.getCourseID());
+			stm.setInt(12, c.getId());
 
 			stm.executeUpdate();
 		}catch(SQLException e){
@@ -154,8 +167,11 @@ public class RatingSQLite extends SQLiteBase {
 						rs.getInt(5),
 						rs.getInt(6),
 						rs.getInt(7),
-						rs.getShort(8),
-						rs.getInt(9)
+						rs.getInt(8),
+						rs.getInt(9),
+						rs.getInt(10),
+						rs.getShort(11),
+						rs.getInt(12)
 						);
 				result = c;
 			}
@@ -166,7 +182,7 @@ public class RatingSQLite extends SQLiteBase {
 		}
 		return result;
 	}
-	
+
 	public List<Rating> whereCourse(int FK){//usefull
 		ArrayList<Rating> result = new ArrayList<>();
 		conn = open();
@@ -185,8 +201,11 @@ public class RatingSQLite extends SQLiteBase {
 						rs.getInt(5),
 						rs.getInt(6),
 						rs.getInt(7),
-						rs.getShort(8),
-						rs.getInt(9)
+						rs.getInt(8),
+						rs.getInt(9),
+						rs.getInt(10),
+						rs.getShort(11),
+						rs.getInt(12)
 						);
 				result.add(c);
 			}

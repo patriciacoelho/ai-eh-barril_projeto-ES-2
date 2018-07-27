@@ -36,64 +36,111 @@ public class Rating {
 	}
 
 
-
 	public Rating(int ponctuality, int explanation, int exam_correction, int exam_second,
-			int requires_presence,int confidence, int exam_by_lectures, int exams_content, int projects,  short eh_barril, int fk_courseID) {
-		this.explanation = explanation;
-		this.requires_presence = requires_presence;
+			int requires_presence, int confidence, int exam_by_lectures, int exams_content, int projects,
+			short eh_barril, int fk_courseID) {
 		this.ponctuality = ponctuality;
+		this.explanation = explanation;
 		this.exam_correction = exam_correction;
-		this.exam_by_lectures = exam_by_lectures;
-		this.projects = projects;
-		this.confidence = confidence;
-		this.exams_content = exams_content;
 		this.exam_second = exam_second;
+		this.requires_presence = requires_presence;
+		this.confidence = confidence;
+		this.exam_by_lectures = exam_by_lectures;
+		this.exams_content = exams_content;
+		this.projects = projects;
 		this.eh_barril = eh_barril;
 		this.fk_courseID = fk_courseID;
 	}
 
 	public Rating(int _id, int ponctuality, int explanation, int exam_correction, int exam_second,
-			int requires_presence,int confidence, int exam_by_lectures, int exams_content, int projects,  short eh_barril, int fk_courseID) {
+			int requires_presence, int confidence, int exam_by_lectures, int exams_content, int projects,
+			short eh_barril, int fk_courseID) {
 		this._id = _id;
-		this.explanation = explanation;
-		this.requires_presence = requires_presence;
-		this.exam_correction = exam_correction;
 		this.ponctuality = ponctuality;
-		this.projects = projects;
+		this.explanation = explanation;
+		this.exam_correction = exam_correction;
+		this.exam_second = exam_second;
+		this.requires_presence = requires_presence;
 		this.confidence = confidence;
 		this.exam_by_lectures = exam_by_lectures;
-		this.exam_second = exam_second;
 		this.exams_content = exams_content;
+		this.projects = projects;
 		this.eh_barril = eh_barril;
 		this.fk_courseID = fk_courseID;
 	}
 
+	public int getPonctuality() {
+		return ponctuality;
+	}
 
+	public void setPonctuality(int ponctuality) {
+		this.ponctuality = ponctuality;
+	}
 
 	public int getExplanation() {
 		return explanation;
 	}
+
 	public void setExplanation(int explanation) {
 		this.explanation = explanation;
 	}
+
+	public int getExam_correction() {
+		return exam_correction;
+	}
+
+	public void setExam_correction(int exam_correction) {
+		this.exam_correction = exam_correction;
+	}
+
+	public int getExam_second() {
+		return exam_second;
+	}
+
+	public void setExam_second(int exam_second) {
+		this.exam_second = exam_second;
+	}
+
 	public int getRequires_presence() {
 		return requires_presence;
 	}
+
 	public void setRequires_presence(int requires_presence) {
 		this.requires_presence = requires_presence;
 	}
-	public int getProjects() {
-		return projects;
-	}
-	public void setProjects(int projects) {
-		this.projects = projects;
-	}
+
 	public int getConfidence() {
 		return confidence;
 	}
+
 	public void setConfidence(int confidence) {
 		this.confidence = confidence;
 	}
+
+	public int getExam_by_lectures() {
+		return exam_by_lectures;
+	}
+
+	public void setExam_by_lectures(int exam_by_lectures) {
+		this.exam_by_lectures = exam_by_lectures;
+	}
+
+	public int getExams_content() {
+		return exams_content;
+	}
+
+	public void setExams_content(int exams_content) {
+		this.exams_content = exams_content;
+	}
+
+	public int getProjects() {
+		return projects;
+	}
+
+	public void setProjects(int projects) {
+		this.projects = projects;
+	}
+
 	public short isEh_barril() {
 		return eh_barril;
 	}
@@ -114,8 +161,8 @@ public class Rating {
 	}
 
 	public String toString(){
-    	return "id:"+ _id+"| "+ponctuality+", "+explanation+", "+exam_correction+", "+exam_second+", "+
-    			requires_presence+", "+confidence+", "+exam_by_lectures+", "+exams_content+", "+projects+","+eh_barril+" |\n";
+    	return "id:"+ _id+"| eh_barril? "+ eh_barril +" |"+"| CourseID? "+ fk_courseID +" |"+ponctuality+", "+explanation+", "+exam_correction+", "+exam_second+", "+
+    			requires_presence+", "+confidence+", "+exam_by_lectures+", "+exams_content+", "+projects+" |\n";
     }
 
 	/** ____________DAO______________*/
