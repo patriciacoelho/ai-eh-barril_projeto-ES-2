@@ -6,11 +6,15 @@ import java.util.ResourceBundle;
 import com.deadlock.aiehbarril.Main;
 import com.deadlock.aiehbarril.model.Course;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.ListView;
 
 public class CourseProfileController implements Initializable {
 
@@ -65,11 +69,19 @@ public class CourseProfileController implements Initializable {
 	private Label lbl_headProfessor;
 	
 	 @FXML
-	 private ImageView dropMenu;
+	 private Button dropMenu;
+	 
+	 @FXML
+	protected ListView<String> dropMenu_results;
 
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		dropMenu_results.setVisible(false);
+		dropMenu_results.getItems().add("Avaliar");
+		dropMenu_results.getItems().add("Cadastrar Novo");
+		dropMenu_results.getItems().add("Vincular Conta");
+		dropMenu_results.getItems().add("Desvincular Conta");
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
 			@Override
 			public void onScreenChanged(String newScreen, Object userData) {
@@ -102,9 +114,26 @@ public class CourseProfileController implements Initializable {
 	@FXML
 	private void handleDropMenu(ActionEvent event) {
 		System.out.print("drop menu\n");
+		dropMenu_results.setVisible(true);
+		dropMenu_results.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+				// TODO Auto-generated method stub
+				ObservableList<String> ol = dropMenu_results.getSelectionModel().getSelectedItems();
+				if(!ol.isEmpty()) {
+					String sel = ol.get(0);
+					System.out.println("VAI PARA PROX. TELA");
+					System.out.println(sel);
+					//Main.changeScreen("view/CourseProfile.fxml",sel);
+				}
+				
+			}
+			
+			
+		});
 		
-		
-		
+				
 	}
 	
 }

@@ -12,16 +12,20 @@
    <children>
       <AnchorPane prefHeight="41.0" prefWidth="320.0" style="-fx-background-color: #333333;">
          <children>
-            <ImageView fx:id="dropMenu" fitHeight="30.0" fitWidth="27.0" layoutX="279.0" layoutY="7.0" onMouseClicked="#handleDropMenu" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/more.png" />
-               </image>
-            </ImageView>
             <Button layoutX="8.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleSearchCourse" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #333333;">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="dropMenu" layoutX="263.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleDropMenu" style="-fx-background-color: #333333;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="27.0" onMouseClicked="#handleDropMenu" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/more.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -49,6 +53,7 @@
                   <Image url="@images/eh-de-boa.jpg" />
                </image>
             </ImageView>
+            <ListView fx:id="dropMenu_results" layoutX="159.0" layoutY="-14.0" prefHeight="131.0" prefWidth="149.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="190.0" prefHeight="230.0" prefWidth="290.0">
@@ -59,6 +64,12 @@
                      <children>
                         <AnchorPane prefHeight="300.0" prefWidth="299.0" style="-fx-background-color: #f8f8f8;">
                            <children>
+                              <AnchorPane layoutX="1.0" layoutY="2.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #eeeeee;">
+                                 <children>
+                                    <Label layoutX="6.0" layoutY="6.0" text="+ informações" />
+                                    <Label layoutX="249.0" layoutY="8.0" />
+                                 </children>
+                              </AnchorPane>
                               <AnchorPane layoutX="2.0" layoutY="33.0" prefHeight="20.0" prefWidth="291.0" style="-fx-background-color: #eeeeee;">
                                  <children>
                                     <Label layoutX="6.0" layoutY="6.0" text="Pontualidade" />
@@ -127,12 +138,6 @@
                                     <Label layoutX="6.0" layoutY="6.0" text="Passa Trabalho" />
                                     <Label fx:id="lbl_media_confidence211" layoutX="205.0" layoutY="6.0" style="-fx-background-color: #000000;" text="NUM" textFill="#f5f5f5" />
                                     <Label fx:id="lbl_media_confidence_text211" layoutX="249.0" layoutY="8.0" style="-fx-background-color: #000000;" text="Label" textFill="#f8f5f5" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane layoutX="1.0" layoutY="2.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #eeeeee;">
-                                 <children>
-                                    <Label layoutX="6.0" layoutY="6.0" text="+ informações" />
-                                    <Label layoutX="249.0" layoutY="8.0" />
                                  </children>
                               </AnchorPane>
                            </children>
