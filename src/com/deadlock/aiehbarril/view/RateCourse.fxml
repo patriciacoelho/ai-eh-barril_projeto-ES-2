@@ -14,7 +14,7 @@
       <Canvas height="41.0" layoutX="9.0" layoutY="154.0" width="300.0" />
       <AnchorPane prefHeight="41.0" prefWidth="320.0" style="-fx-background-color: #333333;">
          <children>
-            <ImageView fx:id="dropMenu" fitHeight="30.0" fitWidth="27.0" layoutX="279.0" layoutY="7.0" onMouseClicked="#handleDropMenu" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="279.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/more.png" />
                </image>

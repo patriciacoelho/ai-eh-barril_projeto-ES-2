@@ -13,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-import javafx.scene.image.ImageView;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
@@ -29,9 +28,6 @@ public class RateCourseController implements Initializable {
 
     @FXML
     private Label headProfessor;
-
-    @FXML
-    private ImageView dropMenu;
 
     @FXML
     private AnchorPane optionTwo;
@@ -56,6 +52,15 @@ public class RateCourseController implements Initializable {
 
     @FXML
     private ToggleGroup q6;
+    
+    @FXML
+    private ToggleGroup q7;
+
+    @FXML
+    private ToggleGroup q8;
+
+    @FXML
+    private ToggleGroup q9;
 
     @FXML
     private ToggleButton a1;
@@ -97,12 +102,16 @@ public class RateCourseController implements Initializable {
 
 	@FXML
 	private void handleLastStepRating(ActionEvent event) {
-		currentRate.setRequires_presence(setRateQuestion(q1));
-		currentRate.setConfidence(setRateQuestion(q2));
-		currentRate.setPonctuality(setRateQuestion(q3));
-		currentRate.setExplanation(setRateQuestion(q4));
-		currentRate.setExam_correction(setRateQuestion(q5));
-		currentRate.setProjects(setRateQuestion(q6));
+		currentRate.setPonctuality(setRateQuestion(q1));
+		currentRate.setExplanation(setRateQuestion(q2));
+		currentRate.setExam_correction(setRateQuestion(q3));
+		currentRate.setExam_second(setRateQuestion(q4));
+		currentRate.setRequires_presence(setRateQuestion(q5));
+		currentRate.setConfidence(setRateQuestion(q6));
+		currentRate.setExam_by_lectures(setRateQuestion(q7));
+		currentRate.setExams_content(setRateQuestion(q8));
+		currentRate.setProjects(setRateQuestion(q9));
+		
 
 		System.out.println(selectedCourse);
 		System.out.print(currentRate);
@@ -171,14 +180,6 @@ public class RateCourseController implements Initializable {
 		System.out.print(Rating.all());
 		System.out.print("\nSearchCourse\n");
 		Main.changeScreen("view/SearchCourse.fxml");
-	}
-
-	@FXML
-	private void handleDropMenu(ActionEvent event) {
-		System.out.print("drop menu\n");
-
-
-
 	}
 
 }
