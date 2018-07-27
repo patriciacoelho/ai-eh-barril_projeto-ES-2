@@ -25,7 +25,8 @@ public class RatingSQLite extends SQLiteBase {
 					"projects INTEGER,"+
 					"confidence INTEGER,"+
 					"eh_barril NUMERIC,"+
-					"FOREIGN KEY(fk_courseID) REFERENCES Courses(fk_courseID));");
+					"fk_courseID INTEGER, "+
+					"FOREIGN KEY(fk_courseID) REFERENCES Courses(id));");
 			stm.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -166,7 +167,7 @@ public class RatingSQLite extends SQLiteBase {
 		}
 		return result;
 	}
-	
+
 	public List<Rating> whereCourse(int FK){//usefull
 		ArrayList<Rating> result = new ArrayList<>();
 		conn = open();

@@ -114,8 +114,8 @@ public class Rating {
 	}
 
 	public String toString(){
-    	return "id:"+ _id+"| "+explanation+","+requires_presence+","+exam_dificulty+","+free_to_answers+
-    	","+projects+","+confidence+","+eh_barril+" |\n";
+    	return "id:"+ _id+"| eh_barril? "+ eh_barril +" |"+"| CourseID? "+ fk_courseID +" |"+explanation+","+requires_presence+","+exam_dificulty+","+free_to_answers+
+    	","+projects+","+confidence+" |\n";
     }
 
 	/** ____________DAO______________*/
