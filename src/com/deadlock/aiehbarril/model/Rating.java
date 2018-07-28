@@ -190,5 +190,38 @@ public class Rating {
 	public static List<Rating> whereCourse(int FK){
 		return dao.whereCourse(FK);
 	}
+	
+	public static Rating mediaRating(Course x) {
+		Rating r = new Rating();
+		List<Rating> ratings;
+		ratings = Rating.whereCourse(x.getId());
+		if(ratings.isEmpty()) {
+			return r;
+		} else {
+			for(Rating i : ratings) {
+				r.setPonctuality(i.getPonctuality()+r.getPonctuality());
+				r.setExplanation(i.getExplanation()+r.getExplanation());
+				r.setExam_correction(i.getExam_correction()+r.getExam_correction());
+				r.setExam_second(i.getExam_second()+r.getExam_second());
+				r.setRequires_presence(i.getRequires_presence()+r.getRequires_presence());
+				r.setConfidence(i.getConfidence()+r.getConfidence());
+				r.setExam_by_lectures(i.getExam_by_lectures()+r.getExam_by_lectures());
+				r.setExams_content(i.getExams_content()+r.getExams_content());
+				r.setProjects(i.getProjects()+r.getProjects());	
+				r.setEh_barril((short)(i.isEh_barril()+r.isEh_barril()));
+			}
+			r.setPonctuality(r.getPonctuality()/ratings.size());
+			r.setExplanation(r.getExplanation()/ratings.size());
+			r.setExam_correction(r.getExam_correction()/ratings.size());
+			r.setExam_second(r.getExam_second()/ratings.size());
+			r.setRequires_presence(r.getRequires_presence()/ratings.size());
+			r.setConfidence(r.getConfidence()/ratings.size());
+			r.setExam_by_lectures(r.getExam_by_lectures()/ratings.size());
+			r.setExams_content(r.getExams_content()/ratings.size());
+			r.setProjects(r.getProjects()/ratings.size());
+			r.setEh_barril((short)(r.isEh_barril()/ratings.size()));
+		}
+		return r;
+	}
 
 }

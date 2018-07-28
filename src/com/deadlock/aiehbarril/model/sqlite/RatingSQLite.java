@@ -101,15 +101,19 @@ public class RatingSQLite extends SQLiteBase {
 		try{
 
 			PreparedStatement stm = conn.prepareStatement("UPDATE Ratings SET "+
+					"ponctuality = ?, "+
 					"explanation = ?, "+
+					"exam_correction = ?, "+
+					"exam_second = ?, "+
 					"requires_presence = ?, "+
-					"exam_dificulty = ?, "+
-					"free_to_answers = ?, "+
-					"projects = ?, "+
 					"confidence = ?, "+
+					"exam_by_lectures = ?, "+
+					"exams_content = ?, "+
+					"projects = ?, "+
 					"eh_barril = ?, "+
-					"fk_courseID = ? "+
+					"fk_courseID = ?, "+
 					"WHERE id = ?;");
+			
 
 			stm.setInt(1, c.getPonctuality());
 			stm.setInt(2, c.getExplanation());
