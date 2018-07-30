@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
-  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+<class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.deadlock.aiehbarril.Main" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="208" y="357"/>    
+    <position height="-1" width="-1" x="201" y="134"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,162 +12,165 @@
   </class>  
   <interface id="2" language="java" name="com.deadlock.aiehbarril.Main.OnChangeScreen" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="198" y="626"/>    
+    <position height="-1" width="-1" x="162" y="390"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <package id="3" language="java" name="com.deadlock.aiehbarril" project="AiEhBarril" 
-    file="/AiEhBarril/src/com/deadlock/aiehbarril" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="182" y="78"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <class id="4" language="java" name="com.deadlock.aiehbarril.controller.CourseProfileController" project="AiEhBarril" 
+  <class id="3" language="java" name="com.deadlock.aiehbarril.controller.CourseProfileController" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/controller/CourseProfileController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="745" y="427"/>    
+    <position height="-1" width="-1" x="763" y="274"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.deadlock.aiehbarril.controller.AboutController" project="AiEhBarril" 
-    file="/AiEhBarril/src/com/deadlock/aiehbarril/controller/AboutController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="499" y="253"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="com.deadlock.aiehbarril.controller.RateCourseController" project="AiEhBarril" 
+  <class id="4" language="java" name="com.deadlock.aiehbarril.controller.RateCourseController" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/controller/RateCourseController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1025" y="331"/>    
+    <position height="-1" width="-1" x="1038" y="290"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="com.deadlock.aiehbarril.controller.RegisterCourseController" project="AiEhBarril" 
-    file="/AiEhBarril/src/com/deadlock/aiehbarril/controller/RegisterCourseController.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1268" y="312"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="com.deadlock.aiehbarril.controller.SearchCourseController" project="AiEhBarril" 
+  <class id="5" language="java" name="com.deadlock.aiehbarril.controller.SearchCourseController" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/controller/SearchCourseController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1288" y="592"/>    
+    <position height="-1" width="-1" x="495" y="200"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.deadlock.aiehbarril.model.Course" project="AiEhBarril" 
+  <class id="6" language="java" name="com.deadlock.aiehbarril.model.Course" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/model/Course.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="806" y="997"/>    
+    <position height="-1" width="-1" x="724" y="894"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.deadlock.aiehbarril.model.Rating" project="AiEhBarril" 
+  <class id="7" language="java" name="com.deadlock.aiehbarril.model.Rating" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/model/Rating.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1144" y="1171"/>    
+    <position height="-1" width="-1" x="1027" y="1219"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="com.deadlock.aiehbarril.model.sqlite.CourseSQLite" project="AiEhBarril" 
+  <class id="8" language="java" name="com.deadlock.aiehbarril.model.sqlite.CourseSQLite" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/model/sqlite/CourseSQLite.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="532" y="1447"/>    
+    <position height="-1" width="-1" x="364" y="1181"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="com.deadlock.aiehbarril.model.sqlite.RatingSQLite" project="AiEhBarril" 
+  <class id="9" language="java" name="com.deadlock.aiehbarril.model.sqlite.RatingSQLite" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/model/sqlite/RatingSQLite.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="847" y="1494"/>    
+    <position height="-1" width="-1" x="745" y="1409"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="com.deadlock.aiehbarril.model.sqlite.SQLiteBase" project="AiEhBarril" 
+  <class id="10" language="java" name="com.deadlock.aiehbarril.model.sqlite.SQLiteBase" project="AiEhBarril" 
     file="/AiEhBarril/src/com/deadlock/aiehbarril/model/sqlite/SQLiteBase.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="563" y="1708"/>    
+    <position height="-1" width="-1" x="386" y="1464"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="14">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <nesting id="15">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="2"/>  
-  </nesting>  
+  <class id="11" language="java" name="com.deadlock.aiehbarril.controller.AboutController" project="AiEhBarril" 
+    file="/AiEhBarril/src/com/deadlock/aiehbarril/controller/AboutController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="217" x="354" y="359"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.deadlock.aiehbarril.controller.RegisterCourseController" project="AiEhBarril" 
+    file="/AiEhBarril/src/com/deadlock/aiehbarril/controller/RegisterCourseController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="187" y="584"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="13">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="14" name="dao"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="16">    
     <end type="SOURCE" refId="4" navigable="false">      
       <attribute id="17" name="selectedCourse"/>      
       <multiplicity id="18" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="19">    
-    <end type="SOURCE" refId="9" navigable="false">      
+    <end type="SOURCE" refId="6" navigable="false">      
       <attribute id="20" name="dao"/>      
       <multiplicity id="21" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="22">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <association id="23">    
+  <association id="22">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="24" name="listeners"/>      
-      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
+      <attribute id="23" name="listeners"/>      
+      <multiplicity id="24" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="26">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="27" name="dao"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
+  <generalization id="25">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <nesting id="27">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </nesting>  
+  <association id="28">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="29" name="selectedCourse"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="29">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="30" name="selectedCourse"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
+  <association id="31">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="32" name="currentRate"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

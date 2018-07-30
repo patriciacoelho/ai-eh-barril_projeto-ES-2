@@ -17,7 +17,7 @@ public class Rating {
 	private int exam_by_lectures;
 	private int exams_content;
 	private int projects;
-	private short eh_barril;
+	private float eh_barril; //float
 
 	private int fk_courseID;
 
@@ -37,8 +37,8 @@ public class Rating {
 
 
 	public Rating(int ponctuality, int explanation, int exam_correction, int exam_second,
-			int requires_presence, int confidence, int exam_by_lectures, int exams_content, int projects,
-			short eh_barril, int fk_courseID) {
+			int requires_presence, int confidence, int exam_by_lectures, int exams_content, int projects, 
+			float eh_barril, int fk_courseID) { //flaot
 		this.ponctuality = ponctuality;
 		this.explanation = explanation;
 		this.exam_correction = exam_correction;
@@ -54,7 +54,7 @@ public class Rating {
 
 	public Rating(int _id, int ponctuality, int explanation, int exam_correction, int exam_second,
 			int requires_presence, int confidence, int exam_by_lectures, int exams_content, int projects,
-			short eh_barril, int fk_courseID) {
+			float eh_barril, int fk_courseID) {//float
 		this._id = _id;
 		this.ponctuality = ponctuality;
 		this.explanation = explanation;
@@ -141,10 +141,10 @@ public class Rating {
 		this.projects = projects;
 	}
 
-	public short isEh_barril() {
+	public float isEh_barril() {//float
 		return eh_barril;
 	}
-	public void setEh_barril(short eh_barril) {
+	public void setEh_barril(float eh_barril) {//float
 		this.eh_barril = eh_barril;
 	}
 
@@ -219,7 +219,7 @@ public class Rating {
 			r.setExam_by_lectures(r.getExam_by_lectures()/ratings.size());
 			r.setExams_content(r.getExams_content()/ratings.size());
 			r.setProjects(r.getProjects()/ratings.size());
-			r.setEh_barril((short)(r.isEh_barril()/ratings.size()));
+			r.setEh_barril(r.isEh_barril()/ratings.size());
 		}
 		return r;
 	}

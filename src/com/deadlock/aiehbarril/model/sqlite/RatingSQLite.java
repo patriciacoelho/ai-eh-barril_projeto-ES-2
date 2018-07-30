@@ -27,7 +27,7 @@ public class RatingSQLite extends SQLiteBase {
 					"exam_by_lectures INTEGER,"+
 					"exams_content INTEGER,"+
 					"projects INTEGER,"+
-					"eh_barril NUMERIC,"+
+					"eh_barril FLOAT,"+
 					"fk_courseID INTEGER, "+
 					"FOREIGN KEY(fk_courseID) REFERENCES Courses(id));");
 			stm.executeUpdate();
@@ -51,7 +51,7 @@ public class RatingSQLite extends SQLiteBase {
 			stm.setInt(8, c.getExam_by_lectures());
 			stm.setInt(9, c.getExams_content());
 			stm.setInt(10, c.getProjects());
-			stm.setShort(11, c.isEh_barril());
+			stm.setFloat(11, c.isEh_barril());
 			stm.setInt(12, c.getCourseID());
 
 			stm.executeUpdate();
@@ -124,7 +124,7 @@ public class RatingSQLite extends SQLiteBase {
 			stm.setInt(7, c.getExam_by_lectures());
 			stm.setInt(8, c.getExams_content());
 			stm.setInt(9, c.getProjects());
-			stm.setShort(10, c.isEh_barril());
+			stm.setFloat(10, c.isEh_barril());
 			stm.setInt(11, c.getCourseID());
 			stm.setInt(12, c.getId());
 

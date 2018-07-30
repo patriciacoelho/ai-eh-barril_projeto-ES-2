@@ -53,7 +53,10 @@ public class RegisterCourseController implements Initializable {
             registerClicked = true;
 
             Course newCourse = new Course(alias.getText(),professor.getText());
+
             newCourse.save();
+        
+           
 
             // vai pra a próxima tela
             Main.changeScreen("view/CourseProfile.fxml",newCourse);

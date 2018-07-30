@@ -25,6 +25,9 @@ public class RateCourseController implements Initializable {
 
 	@FXML
     private Label headAlias;
+	
+	@FXML
+    private Label lbl_question;
 
     @FXML
     private Label headProfessor;
@@ -94,6 +97,7 @@ public class RateCourseController implements Initializable {
 				if (newScreen.equals("view/LastStepRating.fxml")) {
 					if (userData != null)
 						currentRate = (Rating) userData;
+						//lbl_question.setText("Ei como é "+selectedCourse.getAlias()+" com "+selectedCourse.getProfessor()+"?");
 				}
 			}
 		});
@@ -148,7 +152,7 @@ public class RateCourseController implements Initializable {
 		System.out.print("Aí eh Barril\n");
 		optionOne.setStyle("-fx-background-color:#c1c1c1;");
 		optionTwo.setStyle("-fx-background-color: #f8f8f8;");
-		currentRate.setEh_barril((short) 1);
+		currentRate.setEh_barril(0);
 
 	}
 
@@ -157,7 +161,7 @@ public class RateCourseController implements Initializable {
 		System.out.print("Eh de boa\n");
 		optionTwo.setStyle("-fx-background-color:#c1c1c1;");
 		optionOne.setStyle("-fx-background-color: #f8f8f8;");
-		currentRate.setEh_barril((short) 0);
+		currentRate.setEh_barril(1);
 
 	}
 
