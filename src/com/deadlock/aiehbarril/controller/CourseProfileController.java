@@ -85,16 +85,16 @@ public class CourseProfileController implements Initializable {
 
 	  @FXML
 	  private Label lbl_media_examCorrection_text;
-	    
+
 	@FXML
 	private MenuButton dropMenu;
-	
+
 	@FXML
 	private ProgressBar barra;
-	
-	
 
-	
+
+
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
@@ -117,9 +117,9 @@ public class CourseProfileController implements Initializable {
 						lbl_media_exam_content.setText(Integer.toString(m.getExams_content()));
 						lbl_media_projects.setText(Integer.toString(m.getProjects()));
 						lbl_numVotos.setText(num+" Votos");
-						
+
 						String[] quali = {"Péssimo","Ruim","Regular","Bom","Ótimo","Excepcional"};
-						
+
 						lbl_media_ponctuality_text.setText(quali[m.getPonctuality()]);
 						lbl_media_explanation_text.setText(quali[m.getExplanation()]);
 						lbl_media_examCorrection_text.setText(quali[m.getExam_correction()]);
@@ -129,17 +129,17 @@ public class CourseProfileController implements Initializable {
 						lbl_media_exam_by_lectures_text.setText(quali[m.getExam_by_lectures()]);
 						lbl_media_exam_content_text.setText(quali[m.getExams_content()]);
 						lbl_media_projects_text.setText(quali[m.getProjects()]);
-						
-						
+
+
 						NumberFormat format = NumberFormat.getInstance();
 					    format.setMaximumFractionDigits(2);
 					    format.setMinimumFractionDigits(0);
 					    format.setRoundingMode(RoundingMode.HALF_UP);
-					    
-						
+
+
 						barra.setProgress(m.isEh_barril());//TODO
 						lbl_porcentagemEhBarril.setText(format.format(m.isEh_barril()*100)+"%");
-						
+
 					}
 					System.out.print(selectedCourse);
 
@@ -160,7 +160,7 @@ public class CourseProfileController implements Initializable {
 		System.out.print("SearchCourse\n");
 		Main.changeScreen("view/SearchCourse.fxml");
 	}
-	
+
 	@FXML
 	private void handleRegisterCourse(ActionEvent event) {
 		System.out.print("SearchCourse\n");

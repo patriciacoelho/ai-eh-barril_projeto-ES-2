@@ -52,8 +52,11 @@
             </Label>
             <Label fx:id="lbl_headProfessor" layoutX="21.0" layoutY="42.0" text="Edson Araújo" />
             <Label fx:id="lbl_numVotos" layoutX="26.0" layoutY="78.0" text="NUM votos" />
-            <ProgressBar fx:id="barra" layoutX="21.0" layoutY="97.0" prefHeight="27.0" prefWidth="256.0" progress="0.0" />
-            <Label fx:id="lbl_porcentagemEhBarril" layoutX="114.0" layoutY="102.0" text="porcentagem" />
+            <ProgressBar fx:id="barra" layoutX="21.0" layoutY="97.0" prefHeight="27.0" prefWidth="256.0" progress="0.0" style="-fx-accent: #000000;" />
+            <Label fx:id="lbl_porcentagemEhBarril" layoutX="114.0" layoutY="102.0" text="porcentagem" textFill="#fffdfd">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             <ImageView fitHeight="89.0" fitWidth="100.0" layoutX="194.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/eh-de-boa.jpg" />
